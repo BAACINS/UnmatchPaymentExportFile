@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BAACINS" Class="DataBaseBAACINSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=alldev;Initial Catalog=BAACINS;User ID=sa" SettingsObjectName="UnmatchpaymentExportFile.Properties.Settings" SettingsPropertyName="BAACINSConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="UP.SP_GLExport" Method="SP_GLExport">
+    <ElementType Name="SP_GLExportResult">
+      <Column Name="FUNCTION_ID" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="POSTING_DATE" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="REF_LINE" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="NEWBS" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="WRBTR" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NEWKO" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="GSBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GSBER1" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="KOSTL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PRCTR" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ZZSUBBOOK" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PRODUCT" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="MEMO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="SUBTYPE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MARKETCODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="UP.SP_SPINExport" Method="SP_SPINExport">
+    <ElementType Name="SP_SPINExportResult">
+      <Column Name="RECORD_TYPE" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SEQUENCE_NO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="BANK_CODE" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="COMPANY_ACCOUNT_NO" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="COMPANY_NAME" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="POST_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FILLER" Type="System.String" DbType="VarChar(79)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
