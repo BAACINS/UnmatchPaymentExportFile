@@ -54,7 +54,7 @@ namespace UnmatchpaymentExportFile
                 //Drirectory Manage
                 
                 Mng.CreateDirectory(strPathFile);
-                string FileName = strFileName + Mng.GetSystemTimeGL() ; //set file name
+                string FileName = strFileName + Mng.GetSystemTimeGL(); //set file name
 
                 File.Delete(strPathFile + "\\" + FileName);  //Delate File
                 //Create File
@@ -68,26 +68,29 @@ namespace UnmatchpaymentExportFile
                 DataTable _dtDetail = _ds.Tables[0];
                 DataTable _dtControl = _ds.Tables[1];
                 //DETAIL_RECORD
-                for (int i = 0; i < _dtDetail.Rows.Count; i++)
+                if (_dtDetail.Rows.Count > 1)
                 {
-                    string strRec = string.Empty;
-                    DataRow dr = _dtDetail.Rows[i];
-                    for (int j = 0; j < _dtDetail.Columns.Count; j++)
+                    for (int i = 0; i < _dtDetail.Rows.Count; i++)
                     {
-                        strRec += dr.ItemArray[j].ToString();
+                        string strRec = string.Empty;
+                        DataRow dr = _dtDetail.Rows[i];
+                        for (int j = 0; j < _dtDetail.Columns.Count; j++)
+                        {
+                            strRec += dr.ItemArray[j].ToString();
+                        }
+                        File.AppendAllText(strPathFile + "\\" + FileName, strRec + Environment.NewLine, Encoding.GetEncoding(874));
                     }
-                    File.AppendAllText(strPathFile + "\\" + FileName, strRec + Environment.NewLine, Encoding.GetEncoding(874));
-                }
-                //CONTROL_RECORD
-                for (int i = 0; i < _dtControl.Rows.Count; i++)
-                {
-                    string strRec = string.Empty;
-                    DataRow dr = _dtControl.Rows[i];
-                    for (int j = 0; j < _dtControl.Columns.Count; j++)
+                    //CONTROL_RECORD
+                    for (int i = 0; i < _dtControl.Rows.Count; i++)
                     {
-                        strRec += dr.ItemArray[j].ToString();
+                        string strRec = string.Empty;
+                        DataRow dr = _dtControl.Rows[i];
+                        for (int j = 0; j < _dtControl.Columns.Count; j++)
+                        {
+                            strRec += dr.ItemArray[j].ToString();
+                        }
+                        File.AppendAllText(strPathFile + "\\" + FileName, strRec + Environment.NewLine, Encoding.GetEncoding(874));
                     }
-                    File.AppendAllText(strPathFile + "\\" + FileName, strRec + Environment.NewLine, Encoding.GetEncoding(874));
                 }
 
                 Log.WriteLog("Finished :" + strFileName + " - " + DateTime.Now.ToString());

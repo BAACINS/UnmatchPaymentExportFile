@@ -36,7 +36,7 @@ namespace UnmatchpaymentExportFile
         {
             CultureInfo us = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             string strDate = string.Empty;
-            strDate = DateTime.Now.ToString("yyyyMMdd", us);
+            strDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd", us);
             return strDate;
         }
 
@@ -44,7 +44,7 @@ namespace UnmatchpaymentExportFile
         {
             CultureInfo us = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             string strDate = string.Empty;
-            strDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd", us);
+            strDate = DateTime.Now.ToString("yyyyMMdd", us);
             return strDate;
         }
 
@@ -92,8 +92,6 @@ namespace UnmatchpaymentExportFile
                 command.CommandText = ProcedureName;
                 command.ExecuteNonQuery();
 
-                //adapter = new SqlDataAdapter(command);
-                //adapter.Fill(_dsSPIN);
             }
             catch (Exception ex)
             {

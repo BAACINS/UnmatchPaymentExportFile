@@ -70,10 +70,10 @@ namespace UnmatchpaymentExportFile
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="UP.SP_SPINExport")]
-		public ISet<SP_SPINExportResult> SP_SPINExport()
+		public ISingleResult<SP_SPINExportResult> SP_SPINExport()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISet<SP_SPINExportResult>)(result.ReturnValue));
+			return ((ISingleResult<SP_SPINExportResult>)(result.ReturnValue));
 		}
 	}
 	

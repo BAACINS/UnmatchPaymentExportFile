@@ -20,7 +20,7 @@ namespace UnmatchpaymentExportFile
 
             try
             {
-                File.AppendAllText(strPath + "Log_" + DateTime.Now.ToString("yyyyMMdd") + ".txt", "Error_" + DateTime.Now + " : " + strError + Environment.NewLine);
+                File.AppendAllText(strPath + "\\Log_" + DateTime.Now.ToString("yyyyMMdd") + ".txt", "Error_" + DateTime.Now + " : " + strError + Environment.NewLine);
             }
             catch (Exception ex)
             {
